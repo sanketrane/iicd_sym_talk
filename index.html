@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Build, Break &amp; Restore</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sanket Rane" />
+    <meta name="date" content="2023-03-17" />
+    <script src="index_files/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="My-xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="xaringan-custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Build, Break &amp; Restore
+## Decoding the rules that define and reshape immune equilibria
+### Sanket Rane
+### Mathematical and Computational Methods in Cancer and Biology
+### 2023-03-17
+
+---
+
+count: false
+class: center
+
+
+
+
+
+
+
+.center[
+## Thought experiment: Perception of unknown
+]
+&lt;hr&gt;
+
+&lt;img src="figures/slide3.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+--
+
+&lt;br&gt;
+
+## A system that recognizes foreign and tolerizes self
+
+
+---
+
+## .center[Wizards of our immune system:  T and B lymphocytes]
+&lt;hr&gt;
+
+**Unique and Specific:**
+
+Repertoire of clones that identify **antigens** through a unique receptor.
+  &gt; T cells express T cell receptor (TCR). &lt;/br&gt;
+  &gt; B cells express antibody molecules (Ig).
+  
+???
+T and B cells that havent encountered antigen yet &amp;rarr;  **Naive** cells.
+    &gt; Continuously circulate within lymphatic and blood circulation in search of "specific antigens".
+
+--
+
+ &lt;/br&gt;
+
+**Aware of self:**
+
+  &gt; Clones that `recognize` self are **selected positively.** &lt;/br&gt;
+  &gt; Clones that `recognize` and `react` to self are removed: **negative selection.**
+
+???
+Educated in the BM, thymus and spleen to identify self-antigens.
+Effector response against pathogens and tumors by secreting Antibodies, Cytokines, Interferon etc.
+
+--
+
+ &lt;/br&gt;
+ 
+**React and Remember:**
+
+ &gt;Make more copies Transform into **Effector** cells to curb the infection.  &lt;/br&gt;
+ &gt;Differentiate into **memory** cells for future encounters.
+  
+???
+class: center, middle
+
+## Broad and long-lasting lymphocyte repertoires are crucial for protection against infections and malignancies throughout our lifetime
+
+???
+
+
+---
+
+## Immune repertoire diversity
+&lt;hr&gt;
+
+Genetic recombination and clonal selection generates and maintains the breadth and specificity of `\(\sim 10^{12}\)` T and B lymphocytes in human body.
+
+--
+
+- T cells: Diversity estimates `\(10^{15}\)` - `\(10^{61}\)` of different combinations of TCR `\(\alpha\beta\)` chains.
+
+- B cells: Theoretical diversity  `\(&gt;10^{14}\)`, which is further augmented by somatic hypermutation (SHM) during immune responses.
+
+&lt;br&gt;
+
+.citeR[
+Davis and Bjorkman, Nature 1988, Yaari &amp; Kleinstein, Genome Med 2015, &lt;br&gt; Mora and Walzack, arXiv 2016
+]
+
+--
+
+&lt;br&gt;
+
+.center[
+### Most antigen-inexperienced lymphocytes carry unique receptors
+]
+---
+
+## .center[Problem: Logistics of space and time]
+
+&lt;hr&gt;
+
+.MyBig[
+Maintaining `broad` and `long-lasting` repertoires 
+]
+
+
+&lt;br&gt;
+
+&lt;img src="figures/robot_repertoire.jpg" width="65%" style="display: block; margin: auto;" /&gt;
+
+---
+count:false
+
+class: center, middle, inverse
+
+
+## How are the numbers and clonal diversity of lymphocyte populations maintained throughout life?
+
+---
+class: inverse, center, middle
+background-image: url("figures/inverse_bg.png")
+
+## .center[Lymphocyte populations are dynamic ecosystems]
+
+&lt;img src="figures/intro_eco.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+### What happens with age?
+&lt;hr&gt;
+
+
+&lt;img src="figures/data_plot.jpeg" width="85%" style="display: block; margin: auto;" /&gt;
+
+
+&lt;br&gt;
+
+.MyBold[Dynamic growth in early life:]
+Newly generated lymphocytes populate and adapt to rapidly developing tissues.
+  
+.MyBold[Stability in adulthood:]
+Numbers are maintained stably despite decline in production of Bone-marrow deribed precursors.
+
+
+.citeR[
+Verheijen et al. 2020, Rane et al. Plos Bio 2018
+]
+
+---
+
+### How do their birth-death processes vary across a lifetime?
+
+&lt;hr&gt;
+
+
+
+#### Multiple processes contribute to **establishment** and **maintenance**.  
+&lt;/h3&gt;
+
+ - Division, death, influx from the precursor, onward differentiation etc.
+
+
+&lt;img src="figures/homeostasis_processes.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+&lt;br&gt;
+
+
+.MyBold[Homeostatic fitness] `\(\Phi = \rho - \delta\)`  
+&gt; The ability of a clone to persist in the population.
+
+
+
+---
+
+&lt;br&gt;
+
+**Lymphocyte populations are **
+
+- Augmented by flow of new cells from the bone marrow &lt;span style="color:#035AA6;"&gt; &amp;#8594; enhances diversity.&lt;/span&gt;
+
+--
+  
+- Sustained by proliferation (homeostatic self-renewal) &lt;span style="color:#035AA6;"&gt; &amp;#8594;skews diversity&lt;/span&gt;
+  
+--
+
+
+- Depleted by loss of cells (by death and onward differentiation).
+
+--
+
+&lt;br&gt;
+
+### What are the rules of replacement within lymphocyte populations? 
+
+
+
+**Is replacement purely stochastic? Or is there Hierarchy? **
+
+--
+
+- First-in-**first**-out  &amp;rarr; Conveyor belt?  
+
+- First-in-**last**-out? &amp;rarr; age before beauty?  
+
+
+
+
+???
+
+### Identifying these rules impacts our understanding of lymphocyte maintenance
+
+- Do new immigrants displace pre-existing cells or the relatively older cells have a 'homeostatic advantage'?
+
+&lt;br&gt;
+
+.MyBold[
+Are lymphocyte restoration therapies beneficial?
+]
+  &gt;HSC transplant, lymphoablative procedures, Immunodeficiencies  and HIV patients
+
+--
+
+.MyBold[
+Heightened vulnerability to infections and cancers:
+]
+ &gt; An outcome of accumulation of old and incompetent lymphocytes over time?
+
+
+
+---
+
+class: center, middle
+
+
+### Conceptual mechanisms of lymphocyte maintenance
+
+&lt;hr&gt;
+
+
+
+&lt;img src="figures/model_concepts.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+
+---
+count:false
+class: center, middle
+
+### Conceptual mechanisms of lymphocyte maintenance
+
+&lt;hr&gt;
+
+&lt;img src="figures/model_concepts2.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: center, middle
+### Confronting models with data from diverse experimental systems
+&lt;hr&gt;
+
+
+&lt;img src="figures/lambda_global.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+&lt;br&gt;
+
+.citeR[
+Rane _et. al. eLife_ 2021, Verheijn _et. al._ Cell Reports 2020, &lt;br&gt;
+Mold _et. al. Plos Bio_ 2019, Rane _et. al. Plos Bio_ 2018
+&lt;/span&gt;
+]
+
+
+---
+count:false
+class: center, middle
+### Confronting models with data from diverse experimental systems
+&lt;hr&gt;
+
+
+&lt;img src="figures/lambda_global2.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+&lt;br&gt;
+
+.citeR[
+Rane _et. al. eLife_ 2021, Verheijn _et. al._ Cell Reports 2020, &lt;br&gt;
+Mold _et. al. Plos Bio_ 2019, Rane _et. al. Plos Bio_ 2018
+&lt;/span&gt;
+]
+---
+
+## B cell maturation in the spleen
+&lt;hr&gt;
+
+- B cells transition through **short-lived** developmental stages in the spleen.
+
+
+- Late-stage transitional (T2) B cells bifurcate into fully mature Follicular (FO) or Marginal Zone (MZ) B cells.
+
+&lt;br&gt;
+
+
+&lt;img src="figures/bcell_matu.jpg" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Division of labour and space
+&lt;hr&gt;
+
+&lt;!---
+#### Division of labour within B cells
+---&gt;
+
+&lt;h4 style="color:#006789; font-size:100%"&gt; 
+Marginal Zone is an anatomical barrier that divides lymphocyte-rich follicles and the erythrocyte-rich red pulp.
+&lt;/h4&gt;
+
+.pull-left[
+&lt;img src="figures/MZ_viz1.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+.right[*Zimber-Strobl group* 
+&lt;p style="font-size:90%; color:#595959;"&gt;Lechner et al Nat Comm 2021 &lt;/p&gt;
+]
+
+]
+
+???
+5 % of circulation goes through spleen
+blood cicrulation opens into marginal sinus where blood slows down so that Mphages and B cells guarding the sinus can filter it for antigens/pathogens.
+
+--
+
+.pull-right[
+
+
+- FO B cells typically respond to antigens presented by Dendritic cells and Macrophages in a **T cell dependent manner** and produce high-affinity antibodies.
+{{content}}
+
+]
+
+
+???
+
+MZ B cells are strategically positions to locate pathogens that breach systemic barrier and emerge in blood.
+
+--
+
+
+- MZ B cells are strategically positioned to identify and respond to **blood-borne** antigens. 
+&lt;h4 style="color:#9e423c;"&gt;&amp;#8658; Gatekeepers of the immune system.&lt;/h4&gt;
+
+
+---
+
+### Temporal fate-mapping: A window into lymphocyte dynamics
+&lt;hr&gt;
+
+#### **Tracking donor invasion kinetics in transplant conditioned non-irradiated mice.**
+
+&lt;br&gt;
+
+&lt;img src="figures/buchi_diag.jpg" width="75%" style="display: block; margin: auto;" /&gt;
+
+&lt;br&gt;
+
+.citeR[
+Seddon group UCL, UK
+]
+---
+class: center, middle
+
+.middle[
+&lt;img src="figures/FM_data.png" width="90%" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+
+### Model validation
+&lt;hr&gt;
+
+.MyBold[Time-series data:]
+At each time point `\(i\)` (&gt;= 1 animal/s), a set of `\(j\)` observations.
+
+&lt;br&gt;
+
+For `\(i = 0, ..., n\)` and `\(j=1, 2, 3, 4\)`,
+
+$$
+`\begin{aligned}
+&amp;y_i = (y_{i, 1}, y_{i, 2}, y_{i, 3}, y_{i, 4}) \\
+&amp;y_{i} \sim \text{MVN}(\mu_{i}, \Sigma) \quad \quad \quad \quad \quad \quad \quad &amp;[\text{Likelihood}]\\
+\\
+&amp;\mu_i = (\mu_{i, 1}, \mu_{i, 2}, \mu_{i, 3}, \mu_{i, 4}) \\
+&amp;\mu_{i, j} = f_j(i, \theta)  &amp;[\text{Model prediction}]
+\end{aligned}`
+$$
+
+
+&lt;br&gt;
+
+`\(\theta:\)` Vector of parameters within the model.
+
+`\(\Sigma = diag(\sigma_1^2, \sigma_2^2,, \sigma_3^2, \sigma_4^2,)\)` is a covariance matrix.
+
+
+???
+
+&lt;h3 style="font-size:140%; color:#9e423c;"&gt;  Prior  distributions are defined for model parameters &amp;rarr;   &amp;theta;'
+&lt;/h3&gt;
+
+$$
+`\begin{aligned}
+\text{For example, } \quad \quad
+&amp;\theta_1 \sim \text{uniform}(0.0, 1.0)  \\
+&amp;... \\
+&amp;\theta_n \sim \text{normal}(0.005, 0.01)  \\
+\end{aligned}`
+$$
+
+---
+### Estimate of **confidence** in the model
+&lt;hr&gt;
+
+
+.MyBold[Leave-One-Out cross validation:]
+
+&lt;img src="figures/looic.png" width="35%" style="display: block; margin: auto;" /&gt;
+
+
+$$
+\text{Leave-One-Out information criterion:} \,\,
+\small \text{LooIC} = -2 \,\, \sum_{i=1}^n \, Z_i
+$$
+
+--
+
+
+.MyBold[Model ranking:]
+&lt;u&gt;Analog of Akaike weight&lt;/u&gt;
+
+.shadedbox[
+$$
+\omega_i = \frac{\exp(-\frac{1}{2} \, [\Delta \text{LooIC}]_i)}{\sum_m^M  \, \exp(-\frac{1}{2} \, [\Delta \text{LooIC}]_m)}
+$$
+]
+
+???
+.center[
+&lt;h3 style="color:#9e423c; font-size:150%;"&gt;
+&amp;#8658; LooIC measures the model's ability to predict new data.
+&lt;/h3&gt;
+]
+
+
+We measure this  out of sample prediction error using Leave-One-Out cross validation, in which a single observation is treated as test dataset and rest of the observations are treated as training data. The process is repeated for all 'n' observations and the prediction error for each left-out test set is aggregated to calculate Leave-One-Out information criterion (LOOIC).
+
+
+
+$$
+\small \Delta \text{LooIC} = \text{LooIC}_i - \text{min}(\text{LooIC})
+$$
+
+  - `\(\small \Delta \text{LooIC} = 0 \Rightarrow\)` Best-fit model. 
+  - Higher values suggest poorer support from the data.
+
+???
+Only relative values of LooIC are meaningful
+
+
+### Relative support:
+
+&lt;u&gt;Analog of Akaike weight&lt;/u&gt;
+
+.shadedbox[
+$$
+\omega_i = \frac{\exp(-\frac{1}{2} \, [\Delta \text{LooIC}]_i)}{\sum_m^M  \, \exp(-\frac{1}{2} \, [\Delta \text{LooIC}]_m)}
+$$
+]
+
+- Proportional statistical support among the models under consideration.
+
+???
+We then used the estimated LOO-IC values to assess the relative support for models using the analog of the Akaike weight which gives us the probability that a given model will explain new data better than other models considered in this analysis.
+
+---
+
+class: center, middle
+
+### Neutral model explains MZ B cell dynamics
+&lt;hr&gt;
+
+.middle[
+&lt;img src="figures/MZ_fits.png" width="85%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+class: 
+
+### Insights into MZ B cell homeostasis
+&lt;hr&gt;
+
+
+- MZ B cells divide **rarely.**
+  - Inter-division times &amp;approx;  `\(\sim6\)` months (CI: 4-7)
+  
+  
+--
+
+&lt;br&gt;
+
+- Their mean residence time remains unvarying across a mouse lifetime 
+    - Mean residence time &amp;approx; `\(\sim64\)` days (CI: 54-72) &lt;/br&gt;
+    
+--
+
+&lt;br&gt;
+
+#### These findings challenge the conventional view of an **autonomously regulated** MZ B cell compartment i.e. sustained by a high degree of self-renewal. 
+
+---
+class: center, middle
+
+### Time (Host age) dependence in FO B cell dynamics
+&lt;hr&gt;
+
+Model wright = XX%
+
+.middle[
+&lt;img src="figures/FM_results.png" width="85%" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+class: 
+
+### Insights into FO B cell homeostasis
+&lt;hr&gt;
+
+
+- FO B cells divide **very rarely.**
+  - Inter-division times &amp;approx;  &gt; 1 year (CI: 0.6-23)
+  
+  
+--
+
+&lt;br&gt;
+
+- Their **life-expectancy** increases with mouse age.
+  - Mean lifespan in a
+    &gt; 10 wk old mouse &amp;approx;  35 days (CI: 2.5-4) &lt;/br&gt;
+    &gt; 1 year old mouse &amp;approx;  45 days &lt;/br&gt;
+    &gt; 2 year old mouse &amp;approx;  61 days
+
+--
+
+&lt;br&gt;
+
+### FO B cells are a homogeneous, slowly dividing population whose lifespan increases with host age
+
+.citeR[
+Verheijn _et. al._ Cell Reports 2020
+]
+???
+
+inter div time for both donor and host is SAME! booth rarley divide most of the ki67 is inherited.
+
+This naturally explains there host; donor diffs in Ki67 - NOT ANY INTRINSIC HOST/DONOR DIFFS - RATHER,  soon after BMT the donor cells in the FM pool have all recently entered from the T1 pool, who are rapidly dividing -  so will be transiently enriched for cell that inhertityed ki67. But over time as the population turns over, host and donor look same. And there is actually very  little division within FM cells. 
+
+---
+
+
+
+class: center,  inverse
+
+&lt;br&gt;
+&lt;br&gt;
+
+## To what extent do the rules governing B cell dynamics vary upon immunogenic perturbations?
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+
+## Can we quantify it?
+
+
+???
+What are their dynamics in an active immune response?
+
+Modelling the dynamics of development, death and differentiation in animals that are immunized with T-dep antigen.
+
+---
+## Immune-response dynamics of B lymphocytes
+
+&lt;hr&gt;
+
+- #### Immune activation induces seismic changes in B cell behaviour.
+
+  - Exposes them to a wide variety of interactions and stimuli.
+
+--
+
+- Activated B cells **proliferate** rapidly and massively and then participate in the **germinal center (GC)** reactions.
+  - GC reactions:
+
+   &gt;  1. Affinity maturation `\(\rightarrow\)` Highly specific antibodies.
+   &gt;  2. Class-switching to IgG (IgA/IgE depending on the antigenic-context).
+
+--
+
+&lt;br&gt;
+
+
+- GC B cells differentiate into either antibody-secreting **plasma** B cells or become **memory** B cells.
+
+&lt;br&gt;
+&lt;hr&gt;
+---
+&lt;hr&gt;
+&lt;br&gt;
+
+**C&lt;sub&gt;&amp;gamma;1&lt;/sub&gt;Cre reporter mice** immunized with NP-CGG antigen.
+
+- Responding B cells permanently express the reporter protein.
+
+&lt;br&gt;
+
+
+&lt;img src="figures/cgamma1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+.center[
+### Trans-differentiation of activated B cells into MZ phenotype
+]
+.citeR[
+Babushku _et. al._ under revision in _Nature Communications_
+]
+
+---
+
+class:center
+
+##  Dynamical modelling of antigen-specific B cell response
+&lt;hr&gt;
+
+&lt;br&gt;
+
+
+
+&lt;img src="figures/imm_model.jpg" width="60%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+## Activated FO B cells bifurcate into GC and MZ B cells fates
+
+&lt;hr&gt;
+
+Model weights:
+ &gt; Branched Model = 80% &lt;br&gt;
+ &gt; Linear model = 7% &lt;br&gt;
+ &gt; Null model = 14%
+ 
+ &lt;br&gt;
+ 
+
+&lt;img src="figures/imm_res.png" width="105%" style="display: block; margin: auto;" /&gt;
+
+.citeR[
+Babushku _et. al._
+]
+
+---
+class: top
+
+.center[
+### Next step: Lineage tracing to dissect B cell differentiation 
+]
+&lt;hr&gt;
+
+.pull-left[
+
+&lt;img src="figures/clone-tree.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+.pull-right[
+
+&lt;br&gt;
+
+1. Single-cell Ig-repertoire/RNA sequencing of responding cells. 
+
+2. Track the antigen-specific clones using patterns of somatic hypermutation.
+
+3. Infer clonal diversification pathways.
+
+]
+
+
+.center[
+### When do MZ B cells emerge on FO-GC continuum?
+]
+
+
+.citeR[
+In collaboration with Ströbl group (Helmholtz Zentrum, Munich) and &lt;br&gt;
+Kleinstein lab (Yale Univ. USA)
+]
+---
+
+###  Inferring clonal structure of  activation induced MZ B cells
+
+
+&lt;hr&gt;
+
+.MyBold[
+Stochastic simulations using parameter estimates derived from the dynamical modeling of B cell response
+]
+
+**Parent clonal distribution:**  Power law distribution for clone sizes activated FO B cells.
+
+
+&lt;img src="figures/pl_parent.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;hr&gt;
+
+**Neutral dynamics:** Uniform probabilities of recruitment and loss for MZ  clones.
+
+&lt;img src="figures/clone-dyn.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+--
+
+&lt;br&gt;
+
+#### Neutral Dynamics predicts direct mapping of MZB clonal structure on to the clonal distribution in FO B cells.
+
+.MyBold[
+Deviation from this in experimental  observations:
+]
+- Clone specific differences in **Recruitment** or
+**Retention** in MZ 
+
+- Archiving of memory of GC-derived clones in MZ
+
+---
+
+### Acknowledgements
+&lt;hr&gt;
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>`\n"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
