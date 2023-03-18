@@ -62,16 +62,12 @@ knitr::include_graphics("figures/slide3.png")
 ## .center[Wizards of our immune system:  T and B lymphocytes]
 <hr>
 
-**Unique and Specific:**
+**Hugely diverse and specific:**
 
-Repertoire of clones that identify **antigens** through a unique receptor.
+Repertoire of clones that identify **antigens** through diverse receptor.
   > T cells express T cell receptor (TCR). </br>
   > B cells express antibody molecules (Ig).
-  
-???
-T and B cells that havent encountered antigen yet &rarr;  **Naive** cells.
-    > Continuously circulate within lymphatic and blood circulation in search of "specific antigens".
-
+ 
 --
 
  </br>
@@ -81,26 +77,15 @@ T and B cells that havent encountered antigen yet &rarr;  **Naive** cells.
   > Clones that `recognize` self are **selected positively.** </br>
   > Clones that `recognize` and `react` to self are removed: **negative selection.**
 
-???
-Educated in the BM, thymus and spleen to identify self-antigens.
-Effector response against pathogens and tumors by secreting Antibodies, Cytokines, Interferon etc.
-
 --
 
  </br>
  
 **React and Remember:**
 
- >Make more copies Transform into **Effector** cells to curb the infection.  </br>
- >Differentiate into **memory** cells for future encounters.
+ >Proliferate and transform into **Effector** cells to curb the infection.  </br>
+ >Differentiate into **memory** cells  protect against re-exposure.
   
-???
-class: center, middle
-
-## Broad and long-lasting lymphocyte repertoires are crucial for protection against infections and malignancies throughout our lifetime
-
-???
-
 
 ---
 
@@ -113,7 +98,7 @@ Genetic recombination and clonal selection generates and maintains the breadth a
 
 - T cells: Diversity estimates $10^{15}$ - $10^{61}$ of different combinations of TCR $\alpha\beta$ chains.
 
-- B cells: Theoretical diversity  $>10^{14}$, which is further augmented by somatic hypermutation (SHM) during immune responses.
+- B cells: Theoretical diversity  $>10^{14}$ Ig receptors; augmented by somatic hypermutation (SHM) during immune responses.
 
 <br>
 
@@ -126,11 +111,11 @@ Davis and Bjorkman, Nature 1988, Yaari & Kleinstein, Genome Med 2015, <br> Mora 
 <br>
 
 .center[
-### Most antigen-inexperienced lymphocytes carry unique receptors
+### Most (if not all) naive lymphocytes carry unique receptors
 ]
 ---
 
-## .center[Problem: Logistics of space and time]
+## .center[Problem: Space-time logistics]
 
 <hr>
 
@@ -151,8 +136,17 @@ count:false
 
 class: center, middle, inverse
 
+<br>
 
-## How are the numbers and clonal diversity of lymphocyte populations maintained throughout life?
+## 1. How are the numbers and clonal diversity of lymphocyte populations maintained throughout life?
+
+--
+
+
+<br>
+
+
+## 2. To what extent do the rules governing B cell dynamics vary upon immunogenic perturbations?
 
 ---
 class: inverse, center, middle
@@ -166,30 +160,6 @@ knitr::include_graphics("figures/intro_eco.png")
 ```
 
 
----
-
-### What happens with age?
-<hr>
-
-
-```{r echo=FALSE, fig.retina=3, out.width='85%'}
-
-knitr::include_graphics("figures/data_plot.jpeg")
-```
-
-
-<br>
-
-.MyBold[Dynamic growth in early life:]
-Newly generated lymphocytes populate and adapt to rapidly developing tissues.
-  
-.MyBold[Stability in adulthood:]
-Numbers are maintained stably despite decline in production of Bone-marrow deribed precursors.
-
-
-.citeR[
-Verheijen et al. 2020, Rane et al. Plos Bio 2018
-]
 
 ---
 
@@ -217,48 +187,47 @@ knitr::include_graphics("figures/homeostasis_processes.png")
 > The ability of a clone to persist in the population.
 
 
+---
+
+### Variation with age
+<hr>
+
+
+```{r echo=FALSE, fig.retina=3, out.width='90%'}
+
+knitr::include_graphics("figures/data_plot.png")
+```
+
+
+<br>
+
+.MyBold[Dynamic growth in early life:]
+Newly generated lymphocytes populate and adapt to rapidly developing tissues.
+  
+.MyBold[Stability in adulthood:]
+Numbers are maintained stably despite decline in production of Bone-marrow deribed precursors.
+
+
+.citeR[
+Verheijen et al. 2020, Rane et al. Plos Bio 2018
+]
 
 ---
 
-<br>
-
-**Lymphocyte populations are **
-
-- Augmented by flow of new cells from the bone marrow <span style="color:#035AA6;"> &#8594; enhances diversity.</span>
-
---
-  
-- Sustained by proliferation (homeostatic self-renewal) <span style="color:#035AA6;"> &#8594;skews diversity</span>
-  
---
-
-
-- Depleted by loss of cells (by death and onward differentiation).
-
---
-
-<br>
-
 ### What are the rules of replacement within lymphocyte populations? 
+<hr>
 
-
-
-**Is replacement purely stochastic? Or is there Hierarchy? **
+#### Is replacement purely random? Or is there a residence hierarchy? 
 
 --
 
-- First-in-**first**-out  &rarr; Conveyor belt?  
+-  First-in-**first**-out  &rarr; Conveyor belt?  
 
 - First-in-**last**-out? &rarr; age before beauty?  
 
 
 
-
-???
-
-### Identifying these rules impacts our understanding of lymphocyte maintenance
-
-- Do new immigrants displace pre-existing cells or the relatively older cells have a 'homeostatic advantage'?
+--
 
 <br>
 
@@ -273,7 +242,6 @@ Are lymphocyte restoration therapies beneficial?
 Heightened vulnerability to infections and cancers:
 ]
  > An outcome of accumulation of old and incompetent lymphocytes over time?
-
 
 
 ---
@@ -404,10 +372,6 @@ blood cicrulation opens into marginal sinus where blood slows down so that Mphag
 ]
 
 
-???
-
-MZ B cells are strategically positions to locate pathogens that breach systemic barrier and emerge in blood.
-
 --
 
 
@@ -438,7 +402,7 @@ Seddon group UCL, UK
 class: center, middle
 
 .middle[
-```{r echo=FALSE, fig.retina=3, out.width="90%"}
+```{r echo=FALSE, fig.retina=3, out.width="100%"}
 
 knitr::include_graphics("figures/FM_data.png")
 ```
@@ -475,19 +439,6 @@ $\theta:$ Vector of parameters within the model.
 $\Sigma = diag(\sigma_1^2, \sigma_2^2,, \sigma_3^2, \sigma_4^2,)$ is a covariance matrix.
 
 
-???
-
-<h3 style="font-size:140%; color:#9e423c;">  Prior  distributions are defined for model parameters &rarr;   &theta;'
-</h3>
-
-$$
-\begin{aligned}
-\text{For example, } \quad \quad
-&\theta_1 \sim \text{uniform}(0.0, 1.0)  \\
-&... \\
-&\theta_n \sim \text{normal}(0.005, 0.01)  \\
-\end{aligned}
-$$
 
 ---
 ### Estimate of **confidence** in the model
@@ -504,7 +455,7 @@ knitr::include_graphics("figures/looic.png")
 
 $$
 \text{Leave-One-Out information criterion:} \,\,
-\small \text{LooIC} = -2 \,\, \sum_{i=1}^n \, Z_i
+\small \text{LooIC} = -2 \,\, \sum_{i=1}^n \, log(Z_i)
 $$
 
 --
@@ -518,44 +469,6 @@ $$
 \omega_i = \frac{\exp(-\frac{1}{2} \, [\Delta \text{LooIC}]_i)}{\sum_m^M  \, \exp(-\frac{1}{2} \, [\Delta \text{LooIC}]_m)}
 $$
 ]
-
-???
-.center[
-<h3 style="color:#9e423c; font-size:150%;">
-&#8658; LooIC measures the model's ability to predict new data.
-</h3>
-]
-
-
-We measure this  out of sample prediction error using Leave-One-Out cross validation, in which a single observation is treated as test dataset and rest of the observations are treated as training data. The process is repeated for all 'n' observations and the prediction error for each left-out test set is aggregated to calculate Leave-One-Out information criterion (LOOIC).
-
-
-
-$$
-\small \Delta \text{LooIC} = \text{LooIC}_i - \text{min}(\text{LooIC})
-$$
-
-  - $\small \Delta \text{LooIC} = 0 \Rightarrow$ Best-fit model. 
-  - Higher values suggest poorer support from the data.
-
-???
-Only relative values of LooIC are meaningful
-
-
-### Relative support:
-
-<u>Analog of Akaike weight</u>
-
-.shadedbox[
-$$
-\omega_i = \frac{\exp(-\frac{1}{2} \, [\Delta \text{LooIC}]_i)}{\sum_m^M  \, \exp(-\frac{1}{2} \, [\Delta \text{LooIC}]_m)}
-$$
-]
-
-- Proportional statistical support among the models under consideration.
-
-???
-We then used the estimated LOO-IC values to assess the relative support for models using the analog of the Akaike weight which gives us the probability that a given model will explain new data better than other models considered in this analysis.
 
 ---
 
@@ -572,37 +485,10 @@ knitr::include_graphics("figures/MZ_fits.png")
 ]
 
 ---
-
-class: 
-
-### Insights into MZ B cell homeostasis
-<hr>
-
-
-- MZ B cells divide **rarely.**
-  - Inter-division times &approx;  $\sim6$ months (CI: 4-7)
-  
-  
---
-
-<br>
-
-- Their mean residence time remains unvarying across a mouse lifetime 
-    - Mean residence time &approx; $\sim64$ days (CI: 54-72) </br>
-    
---
-
-<br>
-
-#### These findings challenge the conventional view of an **autonomously regulated** MZ B cell compartment i.e. sustained by a high degree of self-renewal. 
-
----
 class: center, middle
 
 ### Time (Host age) dependence in FO B cell dynamics
 <hr>
-
-Model wright = XX%
 
 .middle[
 ```{r echo=FALSE, fig.retina=3, out.width="85%"}
@@ -615,25 +501,30 @@ knitr::include_graphics("figures/FM_results.png")
 ---
 class: 
 
-### Insights into FO B cell homeostasis
+### Insights into naive B cell homeostasis
 <hr>
 
 
-- FO B cells divide **very rarely.**
-  - Inter-division times &approx;  > 1 year (CI: 0.6-23)
+#### Naive B cells divide **very rarely.**
+  - Inter-division times FO B cells &approx;  > 1 year (CI: 0.6-23)
+  - Inter-division times MZ B cells &approx;  $\sim6$ months (CI: 4-7)
   
   
 --
 
-<br>
-
-- Their **life-expectancy** increases with mouse age.
+#### Life-expectancy  of FO B cells increases with mouse age.
   - Mean lifespan in a
     > 10 wk old mouse &approx;  35 days (CI: 2.5-4) </br>
-    > 1 year old mouse &approx;  45 days </br>
     > 2 year old mouse &approx;  61 days
 
+
+#### Mean residence time of MZ B cells &approx; $\sim64$ days (CI: 54-72) </br>
+    
 --
+
+#### Constitutive replenishment
+  - $\sim$ 3% of FO and  $\sim$ 1.2% of MZ B is replaced daily by source influx.
+  
 
 <br>
 
@@ -642,65 +533,22 @@ class:
 .citeR[
 Verheijn _et. al._ Cell Reports 2020
 ]
-???
-
-inter div time for both donor and host is SAME! booth rarley divide most of the ki67 is inherited.
-
-This naturally explains there host; donor diffs in Ki67 - NOT ANY INTRINSIC HOST/DONOR DIFFS - RATHER,  soon after BMT the donor cells in the FM pool have all recently entered from the T1 pool, who are rapidly dividing -  so will be transiently enriched for cell that inhertityed ki67. But over time as the population turns over, host and donor look same. And there is actually very  little division within FM cells. 
-
 ---
 
-
-
-class: center,  inverse
-
-<br>
 <br>
 
-## To what extent do the rules governing B cell dynamics vary upon immunogenic perturbations?
-
---
+<s> 
+##1. How are the numbers and clonal diversity of lymphocyte populations maintained throughout life?
+</s>
 
 <br>
-<br>
 
-## Can we quantify it?
-
-
-???
-What are their dynamics in an active immune response?
-
-Modelling the dynamics of development, death and differentiation in animals that are immunized with T-dep antigen.
+## 2. To what extent do the rules governing B cell dynamics vary upon immunogenic perturbations?
 
 ---
 ## Immune-response dynamics of B lymphocytes
 
 <hr>
-
-- #### Immune activation induces seismic changes in B cell behaviour.
-
-  - Exposes them to a wide variety of interactions and stimuli.
-
---
-
-- Activated B cells **proliferate** rapidly and massively and then participate in the **germinal center (GC)** reactions.
-  - GC reactions:
-
-   >  1. Affinity maturation $\rightarrow$ Highly specific antibodies.
-   >  2. Class-switching to IgG (IgA/IgE depending on the antigenic-context).
-
---
-
-<br>
-
-
-- GC B cells differentiate into either antibody-secreting **plasma** B cells or become **memory** B cells.
-
-<br>
-<hr>
----
-<hr>
-<br>
 
 **C<sub>&gamma;1</sub>Cre reporter mice** immunized with NP-CGG antigen.
 
@@ -709,13 +557,13 @@ Modelling the dynamics of development, death and differentiation in animals that
 <br>
 
 
-```{r echo=FALSE, fig.retina=3, out.width='60%'}
+```{r echo=FALSE, fig.retina=3, out.width='40%'}
 
-knitr::include_graphics("figures/cgamma1.png")
+knitr::include_graphics("figures/bcell_matu3.png")
 ```
 
 .center[
-### Trans-differentiation of activated B cells into MZ phenotype
+### De Novo generation of MZ B cells from activated B cells
 ]
 .citeR[
 Babushku _et. al._ under revision in _Nature Communications_
@@ -725,10 +573,8 @@ Babushku _et. al._ under revision in _Nature Communications_
 
 class:center
 
-##  Dynamical modelling of antigen-specific B cell response
+### Dynamical modelling of antigen-specific B cell response
 <hr>
-
-<br>
 
 
 
@@ -737,13 +583,19 @@ class:center
 knitr::include_graphics("figures/imm_model.jpg")
 ```
 
+--
 
----
+```{r echo=FALSE, fig.retina=3, out.width='105%'}
 
-## Activated FO B cells bifurcate into GC and MZ B cells fates
+knitr::include_graphics("figures/imm_res.png")
+```
 
-<hr>
 
+
+### Activated FO B cells bifurcate into GC and MZ B cells fates
+
+
+???
 Model weights:
  > Branched Model = 80% <br>
  > Linear model = 7% <br>
@@ -762,6 +614,8 @@ Babushku _et. al._
 ]
 
 ---
+
+
 class: top
 
 .center[
@@ -783,72 +637,116 @@ knitr::include_graphics("figures/clone-tree.png")
 
 <br>
 
-1. Single-cell Ig-repertoire/RNA sequencing of responding cells. 
+1. Single-cell Ig-repertoire cite-sequencing of responding cells. 
 
 2. Track the antigen-specific clones using patterns of somatic hypermutation.
 
-3. Infer clonal diversification pathways.
-
+3. .MyBold[
+Infer clonal diversification pathways.
 ]
-
-
-.center[
-### When do MZ B cells emerge on FO-GC continuum?
 ]
+<br>
 
-
+<br>
 .citeR[
 In collaboration with Ströbl group (Helmholtz Zentrum, Munich) and <br>
 Kleinstein lab (Yale Univ. USA)
 ]
+
+
 ---
 
-###  Inferring clonal structure of  activation induced MZ B cells
+###  Connecting population averages to clonal dynamics
 
 
 <hr>
 
-.MyBold[
-Stochastic simulations using parameter estimates derived from the dynamical modeling of B cell response
-]
-
-**Parent clonal distribution:**  Power law distribution for clone sizes activated FO B cells.
+#### Parameter estimates derived from the dynamical modeling of B cell response
+  - _Per capita_ rate of influx from activated FO B into the MZ pool: $\alpha$ <br>
+  - Rate of net loss of MZ B cells: $\lambda$
 
 
-```{r echo=FALSE, fig.retina=3, out.width='60%'}
+<br>
 
-knitr::include_graphics("figures/pl_parent.png")
+#### Stochastic simulation
+If at time $t$, the number of activated FO B cells: F(t). 
+
+In the next small time interval $h$,
+
+
+- Number of new clones recruited into the MZ = $\alpha$ * F(t) * h, 
+
+- Clones are recruited with the **uniform probability**.
+  
+- Clones are lost from the pool with a **binomial probability** of $1- e^{-\lambda \, h}$ 
+
+---
+class: center, middle, inverse
+
+<hr>
+<br>
+
+### Power law distribution of clone-sizes in activated FO B cells
+
+```{r echo=FALSE, fig.retina=3, out.width='75%'}
+
+knitr::include_graphics("figures/pl_parent_loglog.png")
 ```
 
+<br>
+<hr>
 ---
 
+### Prediction of the clonal structure of MZ B cells
 <hr>
 
-**Neutral dynamics:** Uniform probabilities of recruitment and loss for MZ  clones.
-
-```{r echo=FALSE, fig.retina=3, out.width='70%'}
+```{r echo=FALSE, fig.retina=3, out.width='75%'}
 
 knitr::include_graphics("figures/clone-dyn.png")
 ```
 
 --
 
-<br>
 
-#### Neutral Dynamics predicts direct mapping of MZB clonal structure on to the clonal distribution in FO B cells.
+#### Neutral Dynamics predicts direct mapping of MZ B clonal structure on to the clonal distribution in FO B cells.
 
 .MyBold[
-Deviation from this in experimental  observations:
+Any departure from this in experimental observations:
 ]
 - Clone specific differences in **Recruitment** or
-**Retention** in MZ 
+**Retention** in MZ?
 
-- Archiving of memory of GC-derived clones in MZ
+- Archiving of memory of GC-derived clones in MZ?
 
 ---
 
-### Acknowledgements
-<hr>
+
+---
+count: false
+class: center, middle
+
+
+```{r echo=FALSE, fig.retina=3, out.width= '95%'}
+
+knitr::include_graphics("figures/thanks_slide.png")
+```
+
+
+
+---
+count: false
+class: center, middle
+
+## Happy (belated) birthday Simon!
+
+```{r echo=FALSE, fig.retina=3, out.width= '60%'}
+
+knitr::include_graphics("figures/thanks_pic.png")
+```
+
+
+---
+
 
 
 
