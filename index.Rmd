@@ -436,7 +436,7 @@ $$
 
 $\theta:$ Vector of parameters within the model.
 
-$\Sigma = diag(\sigma_1^2, \sigma_2^2,, \sigma_3^2, \sigma_4^2,)$ is a covariance matrix.
+$\Sigma = diag(\sigma_1^2, \sigma_2^2, \sigma_3^2, \sigma_4^2,)$ is a covariance matrix.
 
 
 
@@ -525,10 +525,6 @@ class:
 #### Constitutive replenishment
   - $\sim$ 3% of FO and  $\sim$ 1.2% of MZ B is replaced daily by source influx.
   
-
-<br>
-
-### FO B cells are a homogeneous, slowly dividing population whose lifespan increases with host age
 
 .citeR[
 Verheijn _et. al._ Cell Reports 2020
@@ -649,8 +645,7 @@ Infer clonal diversification pathways.
 
 <br>
 .citeR[
-In collaboration with Ströbl group (Helmholtz Zentrum, Munich) and <br>
-Kleinstein lab (Yale Univ. USA)
+In collaboration with Ströbl group (Helmholtz Zentrum, Munich) 
 ]
 
 
@@ -707,7 +702,6 @@ knitr::include_graphics("figures/clone-dyn.png")
 
 --
 
-
 #### Neutral Dynamics predicts direct mapping of MZ B clonal structure on to the clonal distribution in FO B cells.
 
 .MyBold[
@@ -719,6 +713,34 @@ Any departure from this in experimental observations:
 - Archiving of memory of GC-derived clones in MZ?
 
 ---
+count:false
+class:center
+## Back to the thought experiment:
+<hr>
+
+
+```{r echo=FALSE, fig.retina=3, out.width= '55%'}
+
+knitr::include_graphics("figures/summary_slide1.png")
+```
+
+--
+
+### Frequently replace them with new robots carrying new **Alien-detectors** 
+
+---
+count:false
+class:center
+## Back to the thought experiment:
+<hr>
+
+
+### When **under invasion**
+
+```{r echo=FALSE, fig.retina=3, out.width= '55%'}
+
+knitr::include_graphics("figures/summary_slide2.png")
+```
 
 
 ---
@@ -726,26 +748,19 @@ count: false
 class: center, middle
 
 
-```{r echo=FALSE, fig.retina=3, out.width= '95%'}
+```{r echo=FALSE, fig.retina=3, out.width= '85%'}
 
 knitr::include_graphics("figures/thanks_slide.png")
 ```
 
+<br>
 
+## Happy (belated) birthday Simon!
 
 ---
 count: false
 class: center, middle
 
-## Happy (belated) birthday Simon!
-
-```{r echo=FALSE, fig.retina=3, out.width= '60%'}
-
-knitr::include_graphics("figures/thanks_pic.png")
-```
-
-
----
 
 
 
