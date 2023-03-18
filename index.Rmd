@@ -146,7 +146,7 @@ class: center, middle, inverse
 <br>
 
 
-## 2. To what extent do the rules governing B cell dynamics vary upon immunogenic perturbations?
+## 2. To what extent do the rules governing lymphocyte dynamics vary upon immunogenic perturbations?
 
 ---
 class: inverse, center, middle
@@ -189,7 +189,7 @@ knitr::include_graphics("figures/homeostasis_processes.png")
 
 ---
 
-### Variation with age
+### What happens with age?
 <hr>
 
 
@@ -559,7 +559,7 @@ knitr::include_graphics("figures/bcell_matu3.png")
 ```
 
 .center[
-### De Novo generation of MZ B cells from activated B cells
+### Activation induced trans-differentiation of FO B cells into MZ phenotype
 ]
 .citeR[
 Babushku _et. al._ under revision in _Nature Communications_
@@ -663,7 +663,7 @@ In collaboration with Ströbl group (Helmholtz Zentrum, Munich)
 
 <br>
 
-#### Stochastic simulation
+#### Stochastic simulation of clonal dynamics
 If at time $t$, the number of activated FO B cells: F(t). 
 
 In the next small time interval $h$,
@@ -681,7 +681,7 @@ class: center, middle, inverse
 <hr>
 <br>
 
-### Power law distribution of clone-sizes in activated FO B cells
+### Assumption: Power law distribution of clone-sizes in activated FO B cells
 
 ```{r echo=FALSE, fig.retina=3, out.width='75%'}
 
@@ -710,7 +710,7 @@ Any departure from this in experimental observations:
 - Clone specific differences in **Recruitment** or
 **Retention** in MZ?
 
-- Archiving of memory of GC-derived clones in MZ?
+- Archiving of memory of GC-derived clones in the MZ pool?
 
 ---
 count:false
@@ -741,6 +741,8 @@ class:center
 
 knitr::include_graphics("figures/summary_slide2.png")
 ```
+
+### Allow them to convert into each other
 
 
 ---
