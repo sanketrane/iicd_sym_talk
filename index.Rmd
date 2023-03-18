@@ -390,7 +390,7 @@ blood cicrulation opens into marginal sinus where blood slows down so that Mphag
 
 ```{r echo=FALSE, fig.retina=3, out.width='75%'}
 
-knitr::include_graphics("figures/buchi_diag.jpg")
+knitr::include_graphics("figures/buchi_diag.png")
 ```
 
 <br>
